@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mauro Falcioni</title>
+  <link rel="icon" href="resources/icons/cropped-gattone-logo-32x32.png" type="image/png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="border-end bg-black text-white">
+      <div class="sidebar-heading bg-black border-bottom p-3 text-center">
+        <div class="logo">
+          <img src="resources/icons/logo_M_bianco.svg" alt="logo">
+          <div>
+            <span class="text-white">Mauro Falcioni</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action p-3 bg-black text-white" data-page="bio">Biografia</a>
+        <a href="#" class="list-group-item list-group-item-action p-3 bg-black text-white"
+          data-page="poetica">Poetica</a>
+        <a href="#" class="list-group-item list-group-item-action p-3 bg-black text-white"
+          data-page="lab">Labyrinthus</a>
+        <a href="#" class="list-group-item list-group-item-action p-3 bg-black text-white"
+          data-page="cats">Eudaimonia</a>
+      </div>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div id="page-content-wrapper" class="flex-grow-1">
+      <!-- Top navbar -->
+      <nav class="navbar navbar-dark bg-black border-bottom">
+        <div class="container-fluid">
+          <!--
+          <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+          -->
+          <button class="btn btn-light d-flex align-items-center" id="sidebarToggle" style="gap: 8px;">
+            <img src="resources/icons/gattone-logo.svg" alt="Toggle Icon" style="height: 1.2em; width: auto;">
+            <span id="sidebarToggleText">Nascondi</span>
+          </button>
+
+          <!-- Right logo container -->
+          <div class="d-flex align-items-center hidden" id="rightLogoContainer"
+            style="gap: 8px; padding: 0.375rem 0.75rem; height: 38px; cursor: default;">
+            <img src="resources/icons/logo_M_bianco.svg" alt="logo" style="height: 1.2em; width: auto;">
+            <span class="text-white" style="white-space: nowrap; font-weight: 500;">Mauro Falcioni</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main content area -->
+      <div class="container-fluid mt-4" id="main-content">
+        <!-- Page content is loaded here -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Page Templates -->
+  <template id="bio-template">
+    <div>
+      <h1>Biografia</h1><br>
+      <p>
+        Mauro Falcioni nasce a <a target="_blank" class="text-primary"
+          href="https://it.wikipedia.org/wiki/Matelica">Matelica (MC)</a> il 29 marzo del 1978. Da
+        sempre appassionato di arti visive e illustrazione, si forma in grafica
+        per il web senza mai abbandonare la sua vera vocazione: il disegno a mano libera. Da
+        autodidatta, negli anni dell'adolescenza,
+        attraversa diversi registri stilistici: dal fantasy a rappresentazioni più figurative, fino a
+        trovare nella chiave surrealista le soluzioni
+        più efficaci per esprimere il proprio sguardo sul mondo. E' sotto questo segno che matura il suo
+        stile negli anni, traslando i segni
+        delle matite dalla carta alla tela e dando alle sue opere una grammatica riconoscibile, fatta di
+        figure ricorrenti e scenari intrisi
+        di significato. Niente è lasciato al caso: ogni elemento della raffigurazione si inserisce nella
+        costruzione di un pensiero profondo
+        che, solo attraverso il medium del disegno, sfoga senza perdere di forza semantica. I grandi
+        temi universali della vita vengono
+        approfonditi dall'artista attraverso un ripiegamento su se stesso, che ha in sé una lucidità
+        tutta esistenzialista. Il senso di ogni
+        dipinto è lì, lo si può afferrare solo a patto di scavare oltre quel tratto stilistico
+        apparentemente semplice, lampante, decorativo.
+      </p>
+    </div>
+  </template>
+
+  <template id="poetica-template">
+    <div>
+      <div class="content">
+        <h1>Poetica</h1>
+        <p>
+          Il sogno e il momento vissuto prendono corpo con il passaggio nella memoria quanto con l'atto creativo che,
+          attraverso
+          il linguaggio usato, staglia una differenza tra l'opera e il soggetto. Tale scarto finisce ad essere la
+          materia costituente del
+          soggetto stesso.
+          L'autore rappresenta questa discrepanza incolmabile e, allo stesso tempo essenziale, servendosi dei
+          riferimenti psicanalitici
+          propri della tradizione junghiana. Il gatto guida, indissolubilmente legato all'uomo come l'aquilone al
+          bambino, perché
+          immagini diverse dello stesso sé, rimanda al concetto dell'Ombra, la parte più oscura di noi che siamo
+          costretti ad addomesticare
+          nell'approcciarci alla realtà. Ogni altro rapporto è presente come mancanza o come accenno teso a
+          formalizzarne la stessa:
+          scendendo nel sé l'autore ci costringe ad affrontare la solitudine-malinconia come condizione esistenziale
+          dell'uomo, la sua
+          peculiarità di “cadere fuori dal mondo”.
+        </p>
+      </div>
+      <br>
+      <button class="btn btn-dark" id="proceed-btn">Entra</button>
+      <div id="carousel-placeholder"></div>
+    </div>
+  </template>
+
+  <template id="lab-template">
+    <div>
+      <div class="content">
+        <h1>Labyrinthus</h1>
+        <p>Nella poetica di <a target="_blank" class="text-primary"
+            href="https://it.wikipedia.org/wiki/Jorge_Luis_Borges">Jorge Luis Borges</a> (Buenos Aires, 1899 - Ginevra,
+          1986) l'immagine del labirinto costituisce un'allegoria della
+          complessità del mondo, la cui intelligibilità non è afferrabile attraverso la sola ragione. Il labirinto per
+          lo scrittore argentino è
+          “un edificio costruito per confondere gli uomini”, nel senso che la sua stessa architettura è funzionale a
+          tale fine: la confusione
+          e lo stupore degli uomini. La tortuosità dei suoi percorsi rinvia simbolicamente all'insufficienza di uno
+          sguardo meramente
+          razionale sul reale, la cui consistenza ontologica cela, sotto un'apparente regolarità, significati più
+          complessi e profondi.”
+          Nella sua personale rielaborazione costituita dalla riproduzione con tecnica mista (carboncino, acquerelli,
+          inchiostri, pastelli
+          acquarellabili) degli scorci della propria città natale (Matelica), Mauro Falcioni ripropone il tema calandolo
+          in un contesto
+          psicanalitico in chiave introspettiva.
+          Labyrinthus è il percorso che ci fa scendere in noi stessi, tra vicoli ciechi e menzogne, guidati da una luce
+          lunare che ci indica il
+          centro della costruzione, mostrandoci la via che ci permette di avvicinarci a una più profonda consapevolezza
+          della nostra parte
+          più recondita, della nostra Ombra. Un processo continuo e infinito che non è più trappola letale ma strumento
+          a disposizione
+          dell'individuo per ridefinire continuamente se stesso.</p>
+      </div>
+      <button class="btn btn-primary" id="proceed-btn">Proceed</button>
+      <div id="carousel-placeholder"></div>
+    </div>
+  </template>
+
+  <template id="cats-template">
+    <div>
+      <div class="content">
+        <h1>Eudaimonia</h1>
+        <p>I gatti.</p>
+      </div>
+      <button class="btn btn-primary" id="proceed-btn">Proceed</button>
+      <div id="carousel-placeholder"></div>
+    </div>
+  </template>
+
+  <template id="carousel-template">
+    <div class="mt-4 d-none carousel-wrapper">
+      <div class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target=".carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target=".carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </template>
+
+  <div id="fullscreen-overlay" class="fullscreen-img d-none" onclick="this.classList.add('d-none')">
+    <img src="" alt="Full View" id="fullscreen-image">
+  </div>
+
+  <!-- Bootstrap JS (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

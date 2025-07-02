@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'corsivofaigouno';
+    src: url('../resources/fonts/cogncur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dalek';
+    src: url('../resources/fonts/DALEK__.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'playfair';
+    src: url('../resources/fonts/PlayfairDisplay-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+a[data-page="bio"]     { font-family: 'dalek'; }
+a[data-page="poetica"] { font-family: 'dalek'; } 
+a[data-page="lab"]     { font-family: 'dalek'; }
+a[data-page="cats"]    { font-family: 'dalek'; }
+
+#main-content .content {
+  overflow-y: auto;
+  transition: max-height 0.3s ease;
+}
+
+.content.collapsed {
+  max-height: 30vh;
+  overflow-y: visible;
+}
+#wrapper {
+  min-height: 100vh;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+}
+
+#page-content-wrapper {
+  background-color: white;
+  font-family: 'playfair';
+}
+
+/* Sidebar width and transition */
+#sidebar-wrapper {
+  width: 25vw;
+  transition: margin 0.25s ease;
+}
+
+/* When toggled, hide the sidebar */
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -25vw;
+}
+
+/* Make content wrapper take remaining space */
+#page-content-wrapper {
+  flex: 1;
+}
+
+/* Image preview as square */
+.square-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Fullscreen overlay styles */
+.fullscreen-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-img img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* Logo */
+.logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo img {
+  max-width: 48px; /* Or 40-70px depending on the look you want */
+  height: auto;
+}
+
+.logo span {
+  font-size: 1rem; /* Adjust for legibility */
+  color: #333; /* Matches Bootstrap sidebar text */
+  margin-top: 0.5rem;
+  font-weight: 300;
+  white-space: nowrap;
+  font-family: 'playfair';
+}
+
+@media (max-width: 576px) {
+  .logo img {
+    max-width: 40px;
+  }
+
+  .logo span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .logo img {
+    max-width: 64px;
+  }
+
+  .logo span {
+    font-size: 1.25rem;
+  }
+}
+
+#proceed-btn {
+  background-color: #000 !important;  /* pure black */
+  border-color: #000 !important;
+  color: #fff !important;  /* white text */
+}
+
+#rightLogoContainer {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease;
+}
+
+#rightLogoContainer.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
