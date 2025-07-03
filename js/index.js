@@ -42,6 +42,11 @@
   links.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
+      links.forEach(el => {
+        el.classList.remove('active');
+      });
+      e.target.classList.add('active');
+
       loadPage(link.dataset.page);
     });
   });

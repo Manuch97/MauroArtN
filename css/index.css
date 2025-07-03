@@ -186,3 +186,22 @@ a[data-page="cats"]    { font-family: 'dalek'; }
   transition: opacity 1.5s ease;
   opacity: 1;
 }
+
+
+.list-group-item {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.list-group-item:active {
+  background-color: #222 !important; /* Darker black on click */
+  color: #ccc !important;            /* Slightly dimmed text */
+  transform: scale(0.98);            /* Small press-down effect */
+}
+
+.list-group-item.active {
+  background-color: #333 !important;
+  color: white !important;
+  border-left: 4px solid #fff; /* Visible active border */
+  --bs-list-group-active-border-color: white !important;
+}
