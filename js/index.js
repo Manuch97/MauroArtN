@@ -28,10 +28,12 @@
   document.getElementById('sidebarToggle')
     .addEventListener('click', () => {
       wrapper.classList.toggle('toggled');
-      document.getElementById("rightLogoContainer").classList.toggle("hidden");
+      const rightLogo = document.getElementById("rightLogoContainer");
+      rightLogo.classList.toggle("hidden");
+      rightLogo.classList.toggle("fading-in");
 
       const isCollapsed = wrapper.classList.contains('toggled');
-      document.getElementById('sidebarToggleText').textContent = !isCollapsed ? 'Nascondi' : 'Mostra';
+      document.getElementById('sidebarToggleText').textContent = isCollapsed ? 'Mostra' : 'Nascondi';
     });
 
   // Navigation links

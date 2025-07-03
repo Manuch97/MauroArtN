@@ -38,21 +38,7 @@ a[data-page="cats"]    { font-family: 'dalek'; }
   overflow-y: visible;
 }
 
-@media (max-width: 375px), (max-height: 667px) {
-  #main-content .content {
-    max-height: 50vh; /* smaller max height on small screens */
-  }
-
-  .content.collapsed {
-    max-height: 20vh !important; /* smaller collapsed height */
-  }
-}
-
 #wrapper {
-  min-height: 100vh;
-}
-
-#sidebar-wrapper {
   min-height: 100vh;
 }
 
@@ -63,6 +49,7 @@ a[data-page="cats"]    { font-family: 'dalek'; }
 
 /* Sidebar width and transition */
 #sidebar-wrapper {
+  min-height: 100vh;
   width: 25vw;
   transition: margin 0.25s ease;
 }
@@ -70,6 +57,25 @@ a[data-page="cats"]    { font-family: 'dalek'; }
 /* When toggled, hide the sidebar */
 #wrapper.toggled #sidebar-wrapper {
   margin-left: -25vw;
+}
+
+
+@media (max-width: 375px), (max-height: 667px) {
+  #main-content .content {
+    max-height: 50vh; /* smaller max height on small screens */
+  }
+
+  .content.collapsed {
+    max-height: 20vh !important; /* smaller collapsed height */
+  }
+
+  #sidebar-wrapper {
+    width: 35vw;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -35vw;
+  }
 }
 
 /* Make content wrapper take remaining space */
@@ -156,12 +162,22 @@ a[data-page="cats"]    { font-family: 'dalek'; }
 }
 
 #rightLogoContainer {
+  overflow: hidden;
   opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s ease;
+  max-height: 100px; /* Set to actual height of the container */
+  transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
 }
 
 #rightLogoContainer.hidden {
   opacity: 0;
-  visibility: hidden;
+  max-height: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#rightLogoContainer.fading-in {
+  transition: opacity 0.4s ease;
+  opacity: 1;
 }
