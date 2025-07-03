@@ -8,20 +8,22 @@
   // Map page IDs to their image arrays
   const galleries = {
     poetica: [
-      'resources/opere/1.jpg',
-      'resources/opere/2.jpg',
-      'resources/opere/3.jpg',
-      'resources/opere/4.jpg',
-      'resources/opere/5.jpg'
+      'uploads/opere/1.jpg',
+      'uploads/opere/2.jpg',
+      'uploads/opere/3.jpg',
+      'uploads/opere/4.jpg',
+      'uploads/opere/5.jpg'
     ],
     lab: [
-      'resources/labyrinthus/1.jpg',
-      'resources/labyrinthus/2.jpg',
-      'resources/labyrinthus/3.jpg',
-      'resources/labyrinthus/4.jpg',
-      'resources/labyrinthus/5.jpg'
+      'uploads/labyrinthus/1.jpg',
+      'uploads/labyrinthus/2.jpg',
+      'uploads/labyrinthus/3.jpg',
+      'uploads/labyrinthus/4.jpg',
+      'uploads/labyrinthus/5.jpg'
     ],
-    // add more as needed...
+    cats: [
+      'uploads/eudaimonia/1.png'
+    ]
   };
 
   // Sidebar toggle
