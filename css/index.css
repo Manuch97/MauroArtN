@@ -24,7 +24,7 @@ html, body {
 }
 
 a[data-page="bio"]     { font-family: 'dalek'; }
-a[data-page="poetica"] { font-family: 'dalek'; } 
+a[data-page="poetica"] { font-family: 'dalek'; }
 a[data-page="lab"]     { font-family: 'dalek'; }
 a[data-page="cats"]    { font-family: 'dalek'; }
 
@@ -94,6 +94,21 @@ a[data-page="cats"]    { font-family: 'dalek'; }
   aspect-ratio: 1 / 1;
   object-fit: cover;
   cursor: pointer;
+}
+
+.carousel-wrapper {
+  max-width: 480px;     /* pick a size that feels right on desktop */
+  margin-inline: auto;  /* centre it */
+}
+
+/* Prevent the image from exceeding the wrapper’s size */
+.square-img {
+  max-width: 100%;      /* never grow beyond .carousel-wrapper */
+}
+
+/* Optional: tighten on very small screens so portrait still looks good */
+@media (max-width: 576px){
+  .carousel-wrapper { max-width: 90vw; }   /* 90 % of viewport width */
 }
 
 /* Fullscreen overlay styles */
